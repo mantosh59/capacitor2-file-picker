@@ -6,7 +6,7 @@ Presents the device's native file picking ui and returns the selected file's uri
 
 ## Installation
 
-- `npm i https://github.com/xelits/capacitor-file-picker.git`
+- `npm i capacitor2-file-picker`
 
 ## Usage
 
@@ -30,26 +30,7 @@ FilePicker.showFilePicker({
   }
 );
 ```
-
-## Methods
-
-| Method                                         | Default | Type                        | Description                                                                       |
-| ---------------------------------------------- | ------- | --------------------------- | --------------------------------------------------------------------------------- |
-| showFilePicker(options: {fileTypes: string[], uploadType: string)}) // uploadType = "1"(to get base64 string with file path) or "2"- only file path |         | `Promise<FilePickerResult>` | Presents the device's native file picking ui and returns the selected file's uri. |
-
-## Interfaces
-
-FilePickerResult
-
-| Properties | Default | Type     | Description                               |
-| ---------- | ------- | -------- | ----------------------------------------- |
-| uri        |         | `string` | Uri string pointing to the selected file. |
-| name       |         | `string` | The name of the selected file.            |
-| mimeType   |         | `string` | The MIME type of the selected file.       |
-| extension  |         | `string` | The extension of the selected file.       |
-| size       |         | `string` | The size of the selected file.            |
-
-
+  
 ## Android
 
 Register the plugin by adding it to your MainActivity's onCreate:
@@ -72,11 +53,4 @@ public class MainActivity extends BridgeActivity {
 }
 ```
 
-## Notes
-
-The file picker only accpets:
-
-- application/pdf
-- image/\*
-
-This is because it was developed to meet the need to meet a specific need, but feel free to contribute to the plugin's development. :)
+ 

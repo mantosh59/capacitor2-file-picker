@@ -1,35 +1,37 @@
 {
-  "_from": "git+https://github.com/xelits/capacitor-file-picker.git",
-  "_id": "capacitor-file-picker@0.0.9",
-  "_inBundle": false,
-  "_integrity": "",
-  "_location": "/capacitor-file-picker",
-  "_phantomChildren": {
-    "tslib": "2.3.0"
+  "name": "capacitor2-file-picker",
+  "version": "1.0.0",
+  "description": "This plugin presents the native UI for picking a file.",
+  "main": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rimraf ./dist",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build"
   },
-  "_requested": {
-    "type": "git",
-    "raw": "capacitor-file-picker@git+https://github.com/xelits/capacitor-file-picker.git",
-    "name": "capacitor-file-picker",
-    "escapedName": "capacitor-file-picker",
-    "rawSpec": "git+https://github.com/xelits/capacitor-file-picker.git",
-    "saveSpec": "git+https://github.com/xelits/capacitor-file-picker.git",
-    "fetchSpec": "https://github.com/xelits/capacitor-file-picker.git",
-    "gitCommittish": null
+  "author": "Mantosh Behera",
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/core": "^2.4.7"
   },
-  "_requiredBy": [
-    "/"
+  "devDependencies": {
+    "rimraf": "^3.0.0",
+    "typescript": "^4.0.5",
+    "@capacitor/ios": "^2.4.7",
+    "@capacitor/android": "^2.4.7"
+  },
+  "files": [
+    "dist/",
+    "ios/",
+    "android/",
+    "Capacitor2FilePicker.podspec"
   ],
-  "_resolved": "git+https://github.com/xelits/capacitor-file-picker.git#a1fa2bc111411d3c44d738f2eb69ba7b5d5ee6a2",
-  "_spec": "capacitor-file-picker@git+https://github.com/xelits/capacitor-file-picker.git",
-  "_where": "/Users/mantosh/Documents/XEL IT/iCentris/zinspire",
-  "author": {
-    "name": "Mantosh Behera"
-  },
-  "bugs": {
-    "url": "https://github.com/xelits/capacitor-file-picker/issues"
-  },
-  "bundleDependencies": false,
+  "keywords": [
+    "capacitor",
+    "plugin",
+    "native"
+  ],
   "capacitor": {
     "ios": {
       "src": "ios"
@@ -38,42 +40,11 @@
       "src": "android"
     }
   },
-  "dependencies": {
-    "@capacitor/core": "latest"
-  },
-  "deprecated": false,
-  "description": "This plugin presents the native UI for picking a file.",
-  "devDependencies": {
-    "@capacitor/android": "latest",
-    "@capacitor/ios": "latest",
-    "rimraf": "^3.0.0",
-    "typescript": "^4.0.5"
-  },
-  "files": [
-    "dist/",
-    "ios/",
-    "android/",
-    "CapacitorFilePicker.podspec"
-  ],
-  "homepage": "https://github.com/xelits/capacitor-file-picker#readme",
-  "keywords": [
-    "capacitor",
-    "plugin",
-    "native"
-  ],
-  "license": "MIT",
-  "main": "dist/esm/index.js",
-  "name": "capacitor-file-picker",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xelits/capacitor-file-picker.git"
+    "url": "https://github.com/mantosh59/capacitor2-file-picker"
   },
-  "scripts": {
-    "build": "npm run clean && tsc",
-    "clean": "rimraf ./dist",
-    "prepublishOnly": "npm run build",
-    "watch": "tsc --watch"
-  },
-  "types": "dist/esm/index.d.ts",
-  "version": "0.0.9"
+  "bugs": {
+    "url": "https://github.com/mantosh59/capacitor2-file-picker/issues"
+  }
 }
