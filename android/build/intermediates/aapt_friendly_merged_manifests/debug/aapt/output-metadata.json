@@ -4,7 +4,7 @@
     "type": "AAPT_FRIENDLY_MERGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.epicshaggy.filepicker.capacitorfilepicker",
+  "applicationId": "com.devmantosh.filepicker.capacitorfilepicker",
   "variantName": "debug",
   "elements": [
     {

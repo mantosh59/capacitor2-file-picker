@@ -1,4 +1,4 @@
-package com.epicshaggy.filepicker;
+package com.devmantosh.filepicker;
 
 import android.annotation.SuppressLint;
 import android.content.ContentUris;

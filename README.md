@@ -36,7 +36,7 @@ FilePicker.showFilePicker({
 Register the plugin by adding it to your MainActivity's onCreate:
 
 ```java
-import com.epicshaggy.filepicker.FilePicker;
+import com.devmantosh.filepicker.FilePicker;
 
 public class MainActivity extends BridgeActivity {
   @Override

@@ -1,4 +1,4 @@
-package com.epicshaggy.filepicker;
+package com.devmantosh.filepicker;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,7 +8,7 @@ import android.provider.OpenableColumns;
 import android.util.Log;
 import android.webkit.MimeTypeMap;
 
-import com.epicshaggy.filepicker.capacitorfilepicker.R;
+import com.devmantosh.filepicker.capacitorfilepicker.R;
 import com.getcapacitor.JSArray;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.NativePlugin;
@@ -90,21 +90,24 @@ public class FilePicker extends Plugin {
                         c.moveToFirst();
                         String name = c.getString(c.getColumnIndex(OpenableColumns.DISPLAY_NAME));
                         long size = c.getLong(c.getColumnIndex(OpenableColumns.SIZE));
-
-                        JSObject ret = new JSObject();
-                        try {
-                            String path = copyFileToInternalStorage(data.getData(), getContext().getString(R.string.app_name));
-                            path = path.startsWith("file://") ? path : "file://" + path;
-                            ret.put("uri", path);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            ret.put("uri", "");
+                        if(size > 0){
+                            JSObject ret = new JSObject();
+                            try {
+                                String path = copyFileToInternalStorage(data.getData(), getContext().getString(R.string.app_name));
+                                path = path.startsWith("file://") ? path : "file://" + path;
+                                ret.put("uri", path);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                                ret.put("uri", "");
+                            }
+                            ret.put("name", name);
+                            ret.put("mimeType", mimeType);
+                            ret.put("extension", extension);
+                            ret.put("size", size);
+                            call.resolve(ret);
+                        }else{
+                            call.reject("Invalid/Corrupted file selected.");
                         }
-                        ret.put("name", name);
-                        ret.put("mimeType", mimeType);
-                        ret.put("extension", extension);
-                        ret.put("size", size);
-                        call.resolve(ret);
                     }
                 }
                 break;
@@ -160,7 +163,6 @@ public class FilePicker extends Plugin {
             outputStream.close();
 
         } catch (Exception e) {
-
             Log.e("Exception", e.getMessage());
         }
 
