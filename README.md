@@ -6,7 +6,12 @@ Presents the device's native file picking ui and returns the selected file's uri
 
 ## Installation
 
-- `npm i capacitor2-file-picker`
+- `npm i capacitor2-file-picker --save`
+
+For Capacitor V3
+
+- `npm i filepicker-updated --save`
+- `https://github.com/mantosh59/capacitor-file-picker`
 
 ## Usage
 
